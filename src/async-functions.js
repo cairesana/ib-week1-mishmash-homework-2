@@ -12,8 +12,10 @@
 // 1. When the code `const outputPromise = addSomePromises(somePromise)` is executed,
 //    your function should return a new promise that has both a fulfillment handler and a rejection handler.
 //
-//      - When `somePromise` resolves with a string `"foo"`, the `outputPromise` should resolve with a string `"foofoo"`.
-//      - When `somePromise` is rejected with the value `"bar"`, the `outputPromise`  should resolve with `"barbarbar"`.
+//      - When `somePromise` resolves with a string `"foo"`, the `outputPromise` should resolve with
+//                                                                                      a string `"foofoo"`.
+//      - When `somePromise` is rejected with the value `"bar"`, the `outputPromise`  should resolve
+//                                                                                      with `"barbarbar"`.
 //
 //    So, your fulfillment handler should double the string and the rejection handler should triple the string.
 
@@ -25,14 +27,14 @@ function giveItBackLater(value, callback) {
   setTimeout(complete, 1000)
 }
 
-function addSomePromises() {
-
-}
-
 const promiseToGiveItBackLater = (value) => {
   return new Promise((resolve) => {
     giveItBackLater(value, resolve)             // wraping callback function in promise-style O.o
   })
+}
+
+function addSomePromises() {
+  //return somePromise.then(...???) - I got lost with the instructions for this one O.o
 }
 
 
