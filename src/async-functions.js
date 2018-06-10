@@ -5,9 +5,12 @@
 
 // 1. The function `promiseToGiveItBackLater(value)` should return a promise that will resolve with
 //    the `value` later. It should use the same function you defined in `giveItBackLater`.
-//    That means you will wrap your callback-style function with a promise-style version.
+//    That means you will wrap your callback-style function with a promise-style version. (---DOOOOOONE!!!)
 
-// 1. When the code `const outputPromise = addSomePromises(somePromise)` is executed, your function should return a new promise that has both a fulfillment handler and a rejection handler.
+ // ---- <<<< keep working >> -----
+
+// 1. When the code `const outputPromise = addSomePromises(somePromise)` is executed,
+//    your function should return a new promise that has both a fulfillment handler and a rejection handler.
 //
 //      - When `somePromise` resolves with a string `"foo"`, the `outputPromise` should resolve with a string `"foofoo"`.
 //      - When `somePromise` is rejected with the value `"bar"`, the `outputPromise`  should resolve with `"barbarbar"`.
@@ -22,15 +25,15 @@ function giveItBackLater(value, callback) {
   setTimeout(complete, 1000)
 }
 
-
 function addSomePromises() {
 
 }
 
-function promiseToGiveItBackLater(value) {
-
+const promiseToGiveItBackLater = (value) => {
+  return new Promise((resolve) => {
+    giveItBackLater(value, resolve)             // wraping callback function in promise-style O.o
+  })
 }
-
 
 
 module.exports = {
